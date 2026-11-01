@@ -13,6 +13,7 @@ import { DownloadsPage } from "./components/pages/DownloadsPage";
 import { RunsPage } from "./components/pages/RunsPage";
 import { SettingsPage } from "./components/pages/SettingsPage";
 import { DesignSpecimenPage } from "./components/design/DesignSpecimenPage";
+import { GalleryPage } from "./components/gallery/GalleryPage";
 import { modKey } from "./lib/utils";
 
 function Workspace() {
@@ -101,8 +102,17 @@ function Workspace() {
 function AppBody() {
   const { state } = useApp();
 
-  // The specimen page (审美一览) stands outside the workbench shell on
-  // purpose: it shows the system, not the product chrome.
+  // The gallery lobby and specimen pages stand outside the workbench shell
+  // on purpose: they frame the products, not the product chrome.
+  if (state.page === "gallery") {
+    return (
+      <>
+        <GalleryPage />
+        <Toasts />
+      </>
+    );
+  }
+
   if (state.page === "design") {
     return (
       <>

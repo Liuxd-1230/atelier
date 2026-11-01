@@ -7,6 +7,7 @@ import {
   History,
   Settings2,
   Palette,
+  Images,
   Command,
   ChevronsUpDown,
   X,
@@ -17,6 +18,7 @@ import { cn } from "../../lib/utils";
 import { Hint } from "../ui/Menu";
 
 const NAV: { id: PageId; label: string; icon: typeof House }[] = [
+  { id: "gallery", label: "展览主页", icon: Images },
   { id: "home", label: "首页", icon: House },
   { id: "library", label: "模型库", icon: Boxes },
   { id: "downloads", label: "下载管理", icon: Download },

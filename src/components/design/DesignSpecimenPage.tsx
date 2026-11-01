@@ -254,8 +254,8 @@ export function DesignSpecimenPage() {
         </div>
 
         <h1 className="display-hero mt-6">
-          前端构建
-          <span className="display-hero-indent">审美一览</span>
+          设计一览
+          <span className="display-hero-indent">Atelier</span>
         </h1>
 
         <p className="display-sub mt-7 max-w-[520px]">
@@ -765,6 +765,24 @@ export function DesignSpecimenPage() {
           note="离开标本抽屉的路。"
         >
           <div>
+            <div className="hairline" />
+            <button
+              type="button"
+              onClick={() => dispatch({ type: "navigate", page: "gallery" })}
+              className="group -mx-2 flex w-full items-center justify-between gap-4 rounded-md px-2 py-3.5 text-left transition-colors hover:bg-hover"
+            >
+              <span>
+                <span className="block text-[13px] text-ink">返回展览主页</span>
+                <span className="mt-0.5 block text-[11px] text-ink-4">
+                  换一件展品
+                </span>
+              </span>
+              <ChevronRight
+                size={14}
+                strokeWidth={1.9}
+                className="shrink-0 text-ink-4 transition-transform duration-150 group-hover:translate-x-0.5"
+              />
+            </button>
             <div className="hairline" />
             <button
               type="button"

@@ -20,6 +20,7 @@ const PAGE_LABEL: Record<PageId, string> = {
   runs: "运行记录",
   settings: "设置",
   design: "设计一览",
+  gallery: "展览主页",
 };
 
 export function Header() {

@@ -7,6 +7,7 @@ import {
   Download,
   History,
   House,
+  Images,
   Palette,
   Search,
   Settings2,
@@ -41,6 +42,7 @@ interface Command {
 }
 
 const PAGE_COMMANDS: { id: PageId; label: string; icon: LucideIcon; hint: string }[] = [
+  { id: "gallery", label: "展览主页", icon: Images, hint: "全部项目设计风格一览" },
   { id: "home", label: "首页", icon: House, hint: "概览与最近活动" },
   { id: "library", label: "模型库", icon: Boxes, hint: "浏览全部本地模型" },
   { id: "downloads", label: "下载管理", icon: Download, hint: "进行中与排队任务" },
