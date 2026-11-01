@@ -14,6 +14,7 @@ import { RunsPage } from "./components/pages/RunsPage";
 import { SettingsPage } from "./components/pages/SettingsPage";
 import { DesignSpecimenPage } from "./components/design/DesignSpecimenPage";
 import { GalleryPage } from "./components/gallery/GalleryPage";
+import { NvidiaFeaturePage } from "./components/nvidia/NvidiaFeaturePage";
 import { modKey } from "./lib/utils";
 
 function Workspace() {
@@ -111,6 +112,10 @@ function AppBody() {
         <Toasts />
       </>
     );
+  }
+
+  if (state.page === "nvidia") {
+    return <NvidiaFeaturePage />;
   }
 
   if (state.page === "design") {

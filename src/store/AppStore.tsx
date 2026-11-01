@@ -119,6 +119,7 @@ function pageFromHash(): PageId {
   const hash = window.location.hash;
   if (hash === "#atelier/design" || hash === "#design") return "design";
   if (hash === "#atelier") return "library";
+  if (hash === "#nvidia") return "nvidia";
   return "gallery";
 }
 
@@ -478,9 +479,11 @@ export function AppProvider({ children }: { children: ReactNode }) {
     const hash =
       state.page === "gallery"
         ? ""
-        : state.page === "design"
-          ? "#atelier/design"
-          : "#atelier";
+        : state.page === "nvidia"
+          ? "#nvidia"
+          : state.page === "design"
+            ? "#atelier/design"
+            : "#atelier";
     if (window.location.hash !== hash) {
       history.replaceState(null, "", hash || window.location.pathname);
     }

@@ -49,6 +49,7 @@ const PAGE_COMMANDS: { id: PageId; label: string; icon: LucideIcon; hint: string
   { id: "runs", label: "运行记录", icon: History, hint: "会话与吞吐历史" },
   { id: "settings", label: "设置", icon: Settings2, hint: "偏好与引擎参数" },
   { id: "design", label: "设计一览", icon: Palette, hint: "前端构建审美标本" },
+  { id: "nvidia", label: "RTX PRO 6000 特辑", icon: Cpu, hint: "杂志感产品介绍" },
 ];
 
 export function CommandPalette() {

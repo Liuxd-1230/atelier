@@ -21,6 +21,7 @@ const PAGE_LABEL: Record<PageId, string> = {
   settings: "设置",
   design: "设计一览",
   gallery: "展览主页",
+  nvidia: "RTX PRO 6000",
 };
 
 export function Header() {

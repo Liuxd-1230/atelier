@@ -7,7 +7,8 @@ export type PageId =
   | "downloads"
   | "runs"
   | "settings"
-  | "design";
+  | "design"
+  | "nvidia";
 
 export interface ModelParams {
   parameters: string;

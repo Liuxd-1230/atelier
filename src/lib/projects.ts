@@ -43,9 +43,11 @@ export const PROJECTS: ProjectEntry[] = [
     no: "02",
     name: "RTX PRO 6000",
     kind: "杂志感产品介绍页",
-    summary: "一张显卡的单页叙事：参数即排版，动效即展陈。",
-    styleTags: ["杂志编辑", "产品叙事", "动效展陈"],
-    status: "wip",
-    wipNote: "资料采集中——正式规格与产品图就位后开建。",
+    summary:
+      "一张 96 GB 专业显卡的单页特稿：参数当作排版来读，尺寸按比例绘图，动效只做揭示与计数。",
+    styleTags: ["工业年刊", "参数即排版", "NVIDIA 绿"],
+    cover: assetUrl("gallery/nvidia-cover.jpg"),
+    status: "live",
+    entryPage: "nvidia",
   },
 ];
