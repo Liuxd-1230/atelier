@@ -116,7 +116,7 @@ function toast(tone: ToastTone, title: string, description?: string): Toast {
 }
 
 const initialState: State = {
-  page: "library",
+  page: window.location.hash === "#design" ? "design" : "library",
   models: seedModels,
   runs: seedRuns,
   downloads: seedDownloads,
@@ -464,6 +464,15 @@ const AppContext = createContext<AppContextValue | null>(null);
 
 export function AppProvider({ children }: { children: ReactNode }) {
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  // Keep the URL hash in step with the page so /atelier/#design deep-links
+  // to the specimen page.
+  useEffect(() => {
+    const hash = state.page === "design" ? "#design" : "";
+    if (window.location.hash !== hash) {
+      history.replaceState(null, "", hash || window.location.pathname);
+    }
+  }, [state.page]);
 
   useEffect(() => {
     const root = document.documentElement;

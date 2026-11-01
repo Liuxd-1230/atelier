@@ -6,6 +6,7 @@ import {
   PanelLeftOpen,
   History,
   Settings2,
+  Palette,
   Command,
   ChevronsUpDown,
   X,
@@ -21,6 +22,7 @@ const NAV: { id: PageId; label: string; icon: typeof House }[] = [
   { id: "downloads", label: "下载管理", icon: Download },
   { id: "runs", label: "运行记录", icon: History },
   { id: "settings", label: "设置", icon: Settings2 },
+  { id: "design", label: "设计一览", icon: Palette },
 ];
 
 export function Sidebar() {

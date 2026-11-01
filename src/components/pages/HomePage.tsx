@@ -20,7 +20,7 @@ const GRAPH_W = 268;
 const GRAPH_H = 76;
 const WINDOW = 60;
 
-function ThroughputGraph({
+export function ThroughputGraph({
   history,
   ceiling,
 }: {

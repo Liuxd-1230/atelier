@@ -19,6 +19,7 @@ const PAGE_LABEL: Record<PageId, string> = {
   downloads: "下载管理",
   runs: "运行记录",
   settings: "设置",
+  design: "设计一览",
 };
 
 export function Header() {

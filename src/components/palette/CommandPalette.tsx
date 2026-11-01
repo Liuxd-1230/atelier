@@ -7,6 +7,7 @@ import {
   Download,
   History,
   House,
+  Palette,
   Search,
   Settings2,
   Star,
@@ -45,6 +46,7 @@ const PAGE_COMMANDS: { id: PageId; label: string; icon: LucideIcon; hint: string
   { id: "downloads", label: "下载管理", icon: Download, hint: "进行中与排队任务" },
   { id: "runs", label: "运行记录", icon: History, hint: "会话与吞吐历史" },
   { id: "settings", label: "设置", icon: Settings2, hint: "偏好与引擎参数" },
+  { id: "design", label: "设计一览", icon: Palette, hint: "前端构建审美标本" },
 ];
 
 export function CommandPalette() {

@@ -12,6 +12,7 @@ import { HomePage } from "./components/pages/HomePage";
 import { DownloadsPage } from "./components/pages/DownloadsPage";
 import { RunsPage } from "./components/pages/RunsPage";
 import { SettingsPage } from "./components/pages/SettingsPage";
+import { DesignSpecimenPage } from "./components/design/DesignSpecimenPage";
 import { modKey } from "./lib/utils";
 
 function Workspace() {
@@ -97,11 +98,28 @@ function Workspace() {
   );
 }
 
+function AppBody() {
+  const { state } = useApp();
+
+  // The specimen page (审美一览) stands outside the workbench shell on
+  // purpose: it shows the system, not the product chrome.
+  if (state.page === "design") {
+    return (
+      <>
+        <DesignSpecimenPage />
+        <Toasts />
+      </>
+    );
+  }
+
+  return <Workspace />;
+}
+
 export default function App() {
   return (
     <Tooltip.Provider delayDuration={420} skipDelayDuration={200}>
       <AppProvider>
-        <Workspace />
+        <AppBody />
       </AppProvider>
     </Tooltip.Provider>
   );

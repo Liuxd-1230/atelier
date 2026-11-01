@@ -1,6 +1,6 @@
 export type ModelStatus = "ready" | "running" | "downloading" | "paused" | "error";
 export type ModelKind = "chat" | "vision" | "code" | "embedding";
-export type PageId = "home" | "library" | "downloads" | "runs" | "settings";
+export type PageId = "home" | "library" | "downloads" | "runs" | "settings" | "design";
 
 export interface ModelParams {
   parameters: string;
