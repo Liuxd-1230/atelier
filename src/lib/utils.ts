@@ -47,6 +47,11 @@ export function clamp(n: number, min: number, max: number): number {
   return Math.min(max, Math.max(min, n));
 }
 
+/** Public-dir assets must go through BASE_URL so Pages subpaths resolve. */
+export function assetUrl(path: string): string {
+  return import.meta.env.BASE_URL + path.replace(/^\//, "");
+}
+
 export function modKey(e: { ctrlKey: boolean; metaKey: boolean }): boolean {
   return e.metaKey || e.ctrlKey;
 }

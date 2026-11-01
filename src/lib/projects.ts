@@ -1,4 +1,5 @@
 import type { PageId } from "./types";
+import { assetUrl } from "./utils";
 
 /**
  * The exhibition registry — one entry per project demo on the site.
@@ -32,7 +33,7 @@ export const PROJECTS: ProjectEntry[] = [
     summary:
       "本地大模型的全生命周期工作台：库、下载、运行、记录、设置在一个界面里互相连贯，数据全部本地模拟。",
     styleTags: ["暖纸底", "编辑式极简", "精密仪器"],
-    cover: "/gallery/atelier-cover.jpg",
+    cover: assetUrl("gallery/atelier-cover.jpg"),
     status: "live",
     entryPage: "library",
     specimenPage: "design",

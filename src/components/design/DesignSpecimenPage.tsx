@@ -13,6 +13,7 @@ import { Switch } from "../ui/Switch";
 import { StatusCell } from "../models/ModelBits";
 import { ThroughputGraph } from "../pages/HomePage";
 import { useApp } from "../../store/AppStore";
+import { assetUrl } from "../../lib/utils";
 
 /* --------------------------------------------------------------------------
    Live token values — the hex readouts re-measure the document when the
@@ -609,13 +610,13 @@ export function DesignSpecimenPage() {
               style={{ aspectRatio: "16 / 10" }}
             >
               <img
-                src="/specimen/evolution-after.jpg"
+                src={assetUrl("specimen/evolution-after.jpg")}
                 alt="放大后的工作台首页"
                 draggable={false}
                 className="absolute inset-0 size-full object-cover"
               />
               <img
-                src="/specimen/evolution-before.jpg"
+                src={assetUrl("specimen/evolution-before.jpg")}
                 alt="放大前的工作台首页"
                 draggable={false}
                 className="absolute inset-0 size-full object-cover"
