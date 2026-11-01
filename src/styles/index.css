@@ -1259,27 +1259,40 @@
 
 
 /* ==========================================================================
-   RTX PRO 6000 feature (展品 No.02) — reveal system, page-scoped
+   RTX PRO 6000 feature (展品 No.02) — Big-Top reveal system, page-scoped
    ========================================================================== */
 
 .nf-reveal {
   opacity: 0;
-  transform: translateY(14px);
+  transform: translateY(20px);
   transition:
-    opacity 700ms var(--ease-out-soft),
-    transform 700ms var(--ease-out-soft);
+    opacity 460ms cubic-bezier(0.2, 0, 0, 1),
+    transform 460ms cubic-bezier(0.2, 0, 0, 1);
 }
 
-.nf-in > .nf-reveal,
+.nf-in .nf-reveal,
 .nf-reveal.nf-in {
   opacity: 1;
   transform: none;
 }
 
+.nf-ticker {
+  animation: nf-ticker 36s linear infinite;
+}
+
+@keyframes nf-ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 .nf .nf-drawn line {
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
-  animation: nf-draw 900ms var(--ease-out-soft) forwards;
+  animation: nf-draw 620ms cubic-bezier(0.2, 0, 0, 1) forwards;
 }
 
 @keyframes nf-draw {
@@ -1293,6 +1306,10 @@
     opacity: 1;
     transform: none;
     transition: none;
+  }
+
+  .nf-ticker {
+    animation: none;
   }
 
   .nf .nf-drawn line {
