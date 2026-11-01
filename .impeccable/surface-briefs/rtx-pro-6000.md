@@ -4,14 +4,17 @@ Scope: standalone exhibit page (hash `#nvidia`), outside workbench chrome; galle
 
 ## Direction contract
 
-THESIS — 参数即排版：一张 ¥六位数的工作站显卡，它的卖点是数字本身，所以版面把数字当作展品来排版——巨型等宽读数与编辑式参数账目是主角，产品图是档案照片而不是海报。拒绝品类默认的「近黑底 + 霓虹强调 + 发光边缘」科技页套路：这是一篇灯光洁白的棚拍特稿。
+> 2026-11-01 修订：第一版「工业年刊·棚白」被用户判为仍是 Atelier 的骨架（复用了 .readout、账目行、
+> section-tick、版心与暖白底，只换了字体与强调色——衣服而非纪律）。推倒重做为 Big-Top，以下为现役契约。
 
-OWN-WORLD — 冷调棚白地面（页面局部 token，独立于站点暖纸系统），近黑墨 #141414，NVIDIA 绿 #76B900 作为唯一强调色（品牌真实色，只用于数据强调与读数标点，不成片铺）；展示字用 Noto Sans SC 700 / Inter 重字重紧字距（工业年刊的嗓音，与 Atelier 的衬线展示完全不同声部），IBM Plex Mono 承担一切数据。自带边距、字阶、发丝线，全部局部作用域。
+THESIS — Big-Top 商业特刊：页面由整幅色块互相咬合构成（白 / 墨黑 / NVIDIA 绿全幅交替），数字是图形对象而不是读数，反白巨型标题与巨大引语是版面的承重墙。拒绝的不止是科技页的「近黑+霓虹」套路，也拒绝任何与 Atelier 共享的结构语法——本页无 .readout、无圆角、无软阴影、无居中版心。
 
-STORY — 读者三屏之内知道：这是什么（一张 96GB 的专业卡）、为什么值得（三个大数字 + 一段导语）、可信吗（全部参数有出处，尾注列明 NVIDIA 新闻室与 TechPowerUp 数据库）。
+OWN-WORLD — 纯白 #ffffff 与墨黑 #111 色场 + NVIDIA 绿 #76b900 整幅色场；全部边界为 2–3px 硬规则线；展示字 Inter/Noto Sans SC 900 大写紧字距，数据用 Inter 黑体大数字（等宽只出现在行情条与图注——行情条的行情惯例）；表格为报纸式全格线账目。
 
-FIRST VIEWPORT — 杂志刊头行（running head，非 kicker：栏目名+期号读数）；巨型「RTX PRO 6000」重字重标题（两行：RTX PRO / 6000，第二行缩进）；右侧档案照片卡（TechPowerUp 渲染，带署名与规格图注）；下方三枚巨型起始数字（96 GB / 24,064 / 600 W）入画。
+STORY — 读者被色块的节奏推着走完一份特稿：白（封面跨页+引语+双栏导语+档案照）→ 黑（三个图形级大数字）→ 绿（全格线参数表）→ 白（1:1 尺寸图纸）→ 黑（官方机架图）→ 白（三种形态）→ 绿（来源与出口）。离开时记住：一张 96 GB 的卡，一篇把参数当排版的特稿。
 
-FORM — 编辑式特稿长卷；code-led。签名动效系统（只此一套）：IntersectionObserver 进场揭示（位移+淡入，按序错峰）+ 数字滚动计数（rAF 缓出），尊重 prefers-reduced-motion；封面照悬停极轻微抬升。
+FIRST VIEWPORT — 顶部规格行情条（ink 底白字绿箭头循环滚动）；白色封面场：巨字「RTX PRO / 6000」（6000 绿色）+ 巨大引语「没有给游戏留一个晶体管。」（晶体管绿底反白）+ 双栏导语 + 硬边框档案照（黑底图注条）。
+
+FORM — Big-Top 商业特稿（用户在三选一中锁定）；code-led。签名动效：规格行情条循环滚动 + 数字计数 + 尺寸线画入，全部尊重 prefers-reduced-motion；揭示节奏 460ms 硬切感。
 
 FINISH — unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance.
