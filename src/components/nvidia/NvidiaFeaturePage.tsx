@@ -1,7 +1,7 @@
 import { ArrowLeft } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import { assetUrl } from "../../lib/utils";
 import { useApp } from "../../store/AppStore";
+import { CardScene, RackScene } from "./scenes";
 
 /* --------------------------------------------------------------------------
    Big-Top discipline: sections are full-bleed colour fields that butt against
@@ -108,27 +108,32 @@ const SPECS: {
   { label: "发布 LAUNCH", value: "2025.03.18 · GTC" },
 ];
 
+function Ticker() {
+  return (
+    <div className="overflow-hidden border-b-2 border-black bg-[#111] py-2" aria-hidden>
+      <div className="nf-ticker flex w-max items-center gap-8 whitespace-nowrap font-mono text-[11px] font-medium tracking-[0.08em] text-white">
+        {[0, 1].map((copy) => (
+          <div key={copy} className="flex items-center gap-8">
+            {TICKER.map((t, i) => (
+              <span key={i} className="flex items-center gap-8">
+                <span>{t}</span>
+                <span className="text-[#76b900]">▲</span>
+              </span>
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export function NvidiaFeaturePage() {
   const { dispatch } = useApp();
   const cover = useReveal<HTMLDivElement>();
 
   return (
     <div className="nf page-enter h-full overflow-y-auto overflow-x-hidden bg-white text-[#111]">
-      {/* Ticker — the spec sheet as a stock ticker. */}
-      <div className="overflow-hidden border-b-2 border-black bg-[#111] py-2" aria-hidden>
-        <div className="nf-ticker flex w-max items-center gap-8 whitespace-nowrap font-mono text-[11px] font-medium tracking-[0.08em] text-white">
-          {[0, 1].map((copy) => (
-            <div key={copy} className="flex items-center gap-8">
-              {TICKER.map((t, i) => (
-                <span key={i} className="flex items-center gap-8">
-                  <span>{t}</span>
-                  <span className="text-[#76b900]">▲</span>
-                </span>
-              ))}
-            </div>
-          ))}
-        </div>
-      </div>
+      <Ticker />
 
       {/* Masthead chrome — square, hard. */}
       <header className="flex items-center justify-between border-b-2 border-black bg-white px-[5vw] py-3">
@@ -154,7 +159,7 @@ export function NvidiaFeaturePage() {
           <p className="nf-reveal font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-[#76b900]">
             NVIDIA Workstation GPU — Feature
           </p>
-          <h1 className="nf-reveal mt-4 text-[clamp(72px,12.5vw,190px)] font-black uppercase leading-[0.84] tracking-[-0.045em] text-[#111]">
+          <h1 className="nf-reveal mt-4 text-[clamp(80px,14vw,230px)] font-black uppercase leading-[0.82] tracking-[-0.045em] text-[#111]">
             RTX PRO
             <span className="block text-[#76b900]">6000</span>
           </h1>
@@ -162,7 +167,7 @@ export function NvidiaFeaturePage() {
 
         <div className="mt-10 grid gap-x-[4vw] gap-y-8 lg:grid-cols-[minmax(0,1fr)_minmax(300px,420px)]">
           <div className="nf-reveal" style={{ transitionDelay: "120ms" }}>
-            <p className="text-[clamp(26px,3.2vw,44px)] font-black leading-[1.15] tracking-[-0.02em] text-[#111]">
+            <p className="text-[clamp(30px,4.2vw,64px)] font-black leading-[1.1] tracking-[-0.02em] text-[#111]">
               「没有给游戏留一个
               <span className="bg-[#76b900] px-2 text-white">晶体管</span>
               。」
@@ -185,13 +190,11 @@ export function NvidiaFeaturePage() {
             className="nf-reveal self-start"
             style={{ transitionDelay: "220ms" }}
           >
-            <img
-              src={assetUrl("rtxpro/4272-front-thumb.jpg")}
-              alt="RTX PRO 6000 Blackwell Workstation Edition 正面渲染图"
-              className="block w-full border-[3px] border-black"
-            />
+            <div className="border-[3px] border-black bg-white">
+              <CardScene />
+            </div>
             <figcaption className="border-b-[3px] border-black bg-[#111] px-3 py-2 font-mono text-[10px] uppercase tracking-[0.1em] text-white">
-              双风扇 · 双槽 · 中央 X 骨架 — 图: TechPowerUp
+              抓住它，转一圈 — 程序化模型 · 267×111mm · 非官方渲染
             </figcaption>
           </figure>
         </div>
@@ -219,6 +222,8 @@ export function NvidiaFeaturePage() {
         </p>
       </div>
 
+      <Ticker />
+
       {/* WHITE FIELD — the object, dimension-true. */}
       <div className="border-b-2 border-black px-[5vw] py-16">
         <div className="mb-8 flex flex-wrap items-baseline justify-between gap-3">
@@ -242,17 +247,12 @@ export function NvidiaFeaturePage() {
           放进<span className="text-[#76b900]">机架</span>
         </h2>
         <figure>
-          <img
-            src={assetUrl("rtxpro/cptx25-workstation-tech-blog-rtx-pro-full-server-exploded-1920x1080.png")}
-            alt="RTX PRO 服务器爆炸视图：8 张卡与主板、风扇、电源分层"
-            className="block w-full border-2 border-white/25"
-            loading="lazy"
-          />
+          <RackScene />
           <figcaption className="mt-4 flex flex-wrap items-baseline justify-between gap-2 font-mono text-[10.5px] uppercase tracking-[0.08em] text-white/70">
             <span>
-              Server Edition 无源散热卡 × 8 —— 单节点 768 GB 显存的形态。图: NVIDIA 官方资料
+              Server Edition 无源散热卡 × 8 —— 滚动展开装配，单节点 768 GB 显存。程序化演示，非官方渲染
             </span>
-            <span className="text-[#76b900]">1920×1080</span>
+            <span className="text-[#76b900]">8 × 96 GB</span>
           </figcaption>
         </figure>
       </div>
@@ -285,7 +285,8 @@ export function NvidiaFeaturePage() {
       <footer className="bg-[#76b900] px-[5vw] py-14 text-[#111]">
         <p className="max-w-[680px] text-[12.5px] font-medium leading-[1.8]">
           本页是展览 No.02 的展品本体：一篇独立构建的杂志特稿，与展品 No.01（Atelier）
-          不共享任何布局、配色与结构语法。全部参数引自公开资料；两张图片的来源已在图注标明。
+          不共享任何布局、配色与结构语法。全部参数引自公开资料（来源如下）；
+          页面中的产品影像均为程序化三维演示，非官方渲染。
         </p>
         <ul className="mt-4 space-y-1.5 font-mono text-[11px] font-medium">
           <li>
@@ -341,7 +342,7 @@ function NumeralField() {
       <div className="grid gap-y-12 sm:grid-cols-3 sm:gap-x-[3vw]">
         {items.map((f, i) => (
           <div key={f.label} className="nf-reveal" style={{ transitionDelay: `${i * 110}ms` }}>
-            <div className="text-[clamp(96px,11vw,176px)] font-black leading-[0.82] tracking-[-0.05em] text-white">
+            <div className="text-[clamp(110px,13vw,220px)] font-black leading-[0.8] tracking-[-0.05em] text-white">
               <CountUp to={f.v} />
             </div>
             <div className="mt-5 inline-block bg-[#76b900] px-2.5 py-1 font-mono text-[11px] font-bold uppercase tracking-[0.12em] text-[#111]">
